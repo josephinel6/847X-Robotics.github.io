@@ -178,7 +178,7 @@ void boomerang(float x, float y, float theta, float dlead) {
     while (!angularSettled && !linearSetted) {
         Point carrot(target.x - d * cos(theta) * dlead,
 			         target.y - d * sin(theta) * dlead);
-        linearError = robot.distanceTo(target);
+        linearError = robot.distanceTo(carrot);
         linearPower = linearPID.update(linearError);
         angularError = robot.angleTo(theta);
         angularPower = angularPID.update(angularError);
