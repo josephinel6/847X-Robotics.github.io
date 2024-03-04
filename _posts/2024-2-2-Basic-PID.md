@@ -41,7 +41,7 @@ The first step is measuring how much progress the motors have made. This can be 
 pros::Motor lift(1, pros::E_MOTOR_GEARSET_18); // motor at port 1, green gearbox
 // function to get lift motor to the target angle
 void P_loop(float target, float kP) {
-    float error = 0;
+    float error;
     float P = 0;
     while (error != 0) {
         error = target - lift.get_position(); // update error
@@ -105,7 +105,7 @@ pros::Motor lift(1, pros::E_MOTOR_GEARSET_18); // motor at port 1, green gearbox
 
 // function to get lift motor to the target angle
 void PI_loop(float target, float deadband, float kP, float kI) {
-    float error = 0;
+    float error;
     float integral = 0;
     float P = 0;
     float I = 0;
@@ -165,7 +165,7 @@ pros::Motor lift(1, pros::E_MOTOR_GEARSET_18); // motor at port 1, green gearbox
 void PID(float target, float deadband, float kP, 
 									   float kI, 
 									   float kD) {
-    float error = 0;
+    float error;
     float integral = 0;
     float derivative = 0;
     float prevError = 0;
